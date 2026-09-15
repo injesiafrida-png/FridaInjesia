@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injesia Frida — Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { display: ['Space Grotesk', 'sans-serif'], sans: ['DM Sans', 'sans-serif'] }, colors: { ink: '#101411', acid: '#d6ff45', paper: '#f2f3ed' } } } };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #24292f;
+            background-color: #f6f8fa;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e1e4e8;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0969da;
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #57606a;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #0969da;
+        }
+
+        /* Section Containers */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 20px 60px 20px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #1f2328;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e1e4e8;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Hero / Header Section */
+        #hero {
+            text-align: center;
+            padding-top: 140px;
+        }
+        #hero h1 {
+            font-size: 2.8rem;
+            color: #0969da;
+            margin-bottom: 0.5rem;
+        }
+        #hero p {
+            font-size: 1.25rem;
+            color: #57606a;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0969da;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background-color: #0451a5;
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(140,149,159,0.2);
+        }
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #0969da;
+        }
+
+        /* Skills Tags */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .skill-tag {
+            background-color: #ddf4ff;
+            color: #0969da;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #ffffff;
+            border-top: 1px solid #e1e4e8;
+            color: #57606a;
+            font-size: 0.9rem;
+        }
+    </style>
+    <style>
+        section { max-width: none; margin: 0; padding: 0; }
+        #hero { text-align: left; padding-top: 0; }
+        #hero h1, #hero p { color: inherit; margin-bottom: 0; }
+        h2 { color: inherit; margin-bottom: 0; border-bottom: 0; padding-bottom: 0; }
+    </style>
+</head>
+<body class="bg-ink text-paper font-sans antialiased selection:bg-acid selection:text-ink">
+
+    <!-- Fixed Header / Nav -->
+    <header class="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10">
+        <a href="#hero" class="font-display text-xl font-bold tracking-tight">IF<span class="text-acid">.</span></a>
+        <nav class="hidden items-center gap-8 text-sm text-paper/60 md:flex">
+            <a class="transition hover:text-acid" href="#about">About</a><a class="transition hover:text-acid" href="#projects">Work</a><a class="transition hover:text-acid" href="#skills">Skills</a><a class="rounded-full border border-paper/20 px-5 py-2.5 text-paper transition hover:border-acid hover:text-acid" href="#contact">Let's talk <span class="ml-2">↗</span></a>
+        </nav>
+        <a href="#contact" class="text-sm text-paper/60 md:hidden">Contact <span class="text-acid">↗</span></a>
+    </header>
+
+    <main class="relative z-10">
+    <section id="hero" class="mx-auto max-w-7xl px-6 pb-28 pt-20 lg:px-10 lg:pb-40 lg:pt-28">
+        <div class="max-w-5xl"><p class="mb-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[.25em] text-acid"><span class="h-2 w-2 rounded-full bg-acid shadow-[0_0_18px_#d6ff45]"></span> Available for meaningful work</p><h1 class="font-display text-[clamp(3.5rem,10vw,9.5rem)] font-medium leading-[.88] tracking-[-.07em]">Ideas into<br><span class="text-acid">interfaces.</span></h1><div class="mt-12 flex flex-col justify-between gap-8 border-t border-paper/20 pt-6 md:flex-row md:items-end"><p class="max-w-md text-lg leading-relaxed text-paper/60">I'm Injesia Frida, a software developer who turns complex problems into clear, useful digital experiences.</p><a href="#projects" class="group inline-flex items-center gap-3 font-bold text-acid">Explore my work <span class="flex h-10 w-10 items-center justify-center rounded-full border border-acid transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></a></div></div>
+    </section>
+
+    <section id="about" class="border-y border-paper/10 bg-paper px-6 py-20 text-ink lg:px-10 lg:py-28"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_2fr] lg:gap-24"><p class="font-display text-sm font-bold uppercase tracking-[.2em]">01 / About</p><div><h2 class="font-display max-w-3xl text-4xl font-medium leading-tight tracking-tight md:text-6xl">Good design makes the hard stuff feel <span class="text-[#779100]">obvious.</span></h2><p class="mt-8 max-w-2xl text-lg leading-relaxed text-ink/60">I build clean, accessible, and high-performance websites and digital experiences. Curious by nature and always learning, I bring equal parts logic, empathy, and visual instinct to every build.</p></div></div></section>
+
+    <section id="projects" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36"><div class="mb-12 flex items-end justify-between border-b border-paper/20 pb-5"><div><p class="mb-3 text-sm font-bold uppercase tracking-[.2em] text-acid">02 / Selected work</p><h2 class="font-display text-4xl font-medium tracking-tight md:text-6xl">Built with intent.</h2></div><span class="hidden text-sm text-paper/40 md:block">2024 — 2026</span></div><div class="grid gap-5 md:grid-cols-2"><article class="group rounded-2xl bg-[#1b241b] p-5 transition duration-500 hover:-translate-y-2 md:col-span-2 md:flex md:items-end md:justify-between md:p-8"><div class="flex h-72 w-full flex-col justify-between rounded-xl bg-[#c7d4aa] p-6 text-ink md:h-80 md:w-[58%]"><span class="text-sm font-bold">01 / WEB EXPERIENCE</span><span class="font-display text-5xl font-medium tracking-tight md:text-7xl">Portfolio<br>Website<span class="text-[#779100]">.</span></span></div><div class="mt-6 max-w-sm md:mb-3 md:mr-6 md:mt-0"><h3 class="font-display text-2xl">A home for the work</h3><p class="mt-3 text-paper/50">A responsive personal portfolio shaped around clarity, personality, and a little bit of edge.</p><div class="mt-6 flex gap-2 text-xs text-acid"><span class="rounded-full border border-acid/30 px-3 py-1">HTML</span><span class="rounded-full border border-acid/30 px-3 py-1">Tailwind</span></div></div></article><article class="group rounded-2xl border border-paper/15 p-6 transition duration-500 hover:-translate-y-2 hover:border-acid/60 md:p-8"><div class="flex h-52 items-center justify-center rounded-xl bg-[#e47850] text-ink"><span class="font-display text-8xl font-bold">02</span></div><h3 class="mt-7 font-display text-2xl">Project Title 2</h3><p class="mt-2 text-paper/50">Another thoughtful digital product in progress, from first sketch to final interaction.</p><a href="#contact" class="mt-6 inline-block text-sm text-acid">View case study ↗</a></article><article class="group rounded-2xl border border-paper/15 p-6 transition duration-500 hover:-translate-y-2 hover:border-acid/60 md:p-8"><div class="flex h-52 items-center justify-center rounded-xl bg-[#8da7c7] text-ink"><span class="font-display text-8xl font-bold">03</span></div><h3 class="mt-7 font-display text-2xl">Coming next</h3><p class="mt-2 text-paper/50">New experiments, useful tools, and the occasional beautiful rabbit hole.</p><a href="#contact" class="mt-6 inline-block text-sm text-acid">Start a conversation ↗</a></article></div></section>
+
+    <section id="skills" class="border-t border-paper/10 px-6 py-20 lg:px-10 lg:py-28"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_2fr]"><p class="text-sm font-bold uppercase tracking-[.2em] text-acid">03 / Toolkit</p><div class="flex flex-wrap gap-x-8 gap-y-5 font-display text-3xl text-paper/80 md:text-5xl"><span>HTML5</span><span class="text-paper/20">/</span><span>CSS3</span><span class="text-paper/20">/</span><span>JavaScript</span><span class="text-paper/20">/</span><span>Git</span><span class="text-paper/20">/</span><span>UI Design</span><span class="text-paper/20">/</span><span>VS Code</span></div></div></section>
+
+    <section id="contact" class="bg-acid px-6 py-24 text-ink lg:px-10 lg:py-32"><div class="mx-auto max-w-7xl"><p class="mb-10 text-sm font-bold uppercase tracking-[.2em]">04 / Get in touch</p><h2 class="max-w-5xl font-display text-[clamp(3.3rem,8vw,8rem)] font-medium leading-[.9] tracking-[-.06em]">Have a good<br>idea? <span class="text-[#779100]">Hello.</span></h2><a class="mt-12 inline-block border-b-2 border-ink pb-2 font-display text-xl font-bold" href="mailto:injesiafrida@com">injesiafrida@com ↗</a></div></section>
+    </main>
+    <footer class="flex flex-col justify-between gap-3 px-6 py-8 text-sm text-paper/40 md:flex-row lg:px-10"><p>© 2026 Injesia Frida</p><p>Built with care & curiosity.</p></footer>
+
+</body>
+</html>
